@@ -1,0 +1,481 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    background: linear-gradient(135deg, #fff0f6, #ffe0ed, #fff5fa);
+    color: #5c3042;
+    line-height: 1.6;
+    overflow-x: hidden;
+
+    animation: pageIn 1s ease;
+}
+
+/* =========================
+   ANIMASI HALAMAN
+========================= */
+
+@keyframes pageIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes titleCute {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px) scale(0.9);
+    }
+
+    70% {
+        transform: translateY(5px) scale(1.03);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: scale(1.4);
+        opacity: 1;
+    }
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    position: relative;
+    background: linear-gradient(
+        135deg,
+        #ff6fa8,
+        #ff91bb,
+        #ffb6d5
+    );
+
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+
+    border-bottom-left-radius: 45px;
+    border-bottom-right-radius: 45px;
+
+    box-shadow: 0 8px 20px rgba(214, 51, 132, 0.2);
+
+    animation: titleCute 1.2s ease;
+}
+
+header h1 {
+    font-size: 34px;
+    margin-bottom: 10px;
+
+    text-shadow: 2px 3px 5px rgba(150, 30, 80, 0.2);
+}
+
+header p {
+    font-size: 17px;
+}
+
+/* Sparkle dekorasi */
+
+header::before {
+    content: "✨";
+    position: absolute;
+    left: 12%;
+    top: 25px;
+    font-size: 25px;
+
+    animation: sparkle 2s infinite;
+}
+
+header::after {
+    content: "🌸";
+    position: absolute;
+    right: 12%;
+    bottom: 25px;
+    font-size: 25px;
+
+    animation: floating 2s infinite ease-in-out;
+}
+
+/* =========================
+   NAVIGASI
+========================= */
+
+nav {
+    width: 90%;
+    max-width: 700px;
+
+    margin: -5px auto 30px;
+
+    background: white;
+
+    padding: 13px;
+
+    text-align: center;
+
+    border-radius: 30px;
+
+    box-shadow: 0 5px 15px rgba(214, 51, 132, 0.15);
+
+    position: relative;
+    z-index: 10;
+}
+
+nav a {
+    display: inline-block;
+
+    color: #d63384;
+
+    text-decoration: none;
+
+    margin: 5px 15px;
+
+    font-weight: bold;
+
+    padding: 8px 18px;
+
+    border-radius: 20px;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background-color: #ffd6e7;
+
+    transform: translateY(-3px) scale(1.05);
+
+    box-shadow: 0 4px 10px rgba(214, 51, 132, 0.2);
+}
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+    width: 90%;
+    max-width: 900px;
+
+    margin: 30px auto;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+    position: relative;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    padding: 30px;
+
+    margin-bottom: 30px;
+
+    border-radius: 25px;
+
+    border: 2px solid #ffd1e2;
+
+    box-shadow:
+        0 8px 20px rgba(214, 51, 132, 0.12);
+
+    transition: 0.4s ease;
+
+    animation: pageIn 1s ease;
+}
+
+/* Dekorasi bunga pada card */
+
+.card::before {
+    content: "♡";
+
+    position: absolute;
+
+    right: 20px;
+    top: 10px;
+
+    font-size: 30px;
+
+    color: #ff9bc2;
+
+    animation: sparkle 2s infinite;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 15px 30px rgba(214, 51, 132, 0.2);
+}
+
+.card h2 {
+    color: #d63384;
+
+    margin-bottom: 20px;
+
+    text-align: center;
+}
+
+/* =========================
+   FOTO PROFIL
+========================= */
+
+.foto {
+    display: block;
+
+    width: 180px;
+    height: 180px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    margin: 0 auto 20px;
+
+    border: 7px solid white;
+
+    outline: 5px solid #ff9bc2;
+
+    box-shadow:
+        0 8px 20px rgba(214, 51, 132, 0.2);
+
+    animation: floating 3s infinite ease-in-out;
+
+    transition: 0.4s;
+}
+
+.foto:hover {
+    transform: scale(1.08) rotate(2deg);
+
+    outline-color: #d63384;
+}
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+    text-align: center;
+
+    margin-bottom: 20px;
+
+    color: #754356;
+}
+
+/* =========================
+   DATA PRIBADI
+========================= */
+
+.info {
+    background: linear-gradient(
+        135deg,
+        #fff0f6,
+        #ffe3ee
+    );
+
+    padding: 20px;
+
+    border-radius: 18px;
+
+    border: 1px dashed #ff9bc2;
+
+    transition: 0.3s;
+}
+
+.info:hover {
+    transform: scale(1.02);
+
+    background-color: #ffd6e7;
+}
+
+.info p {
+    margin: 8px 0;
+}
+
+/* =========================
+   TABEL
+========================= */
+
+table {
+    width: 100%;
+
+    border-collapse: separate;
+
+    border-spacing: 0;
+
+    overflow: hidden;
+
+    border-radius: 15px;
+
+    margin-top: 15px;
+}
+
+table th {
+    background: linear-gradient(
+        135deg,
+        #d63384,
+        #ed6aa4
+    );
+
+    color: white;
+
+    padding: 13px;
+}
+
+table td {
+    padding: 12px;
+
+    text-align: center;
+
+    border-bottom: 1px solid #f5c0d5;
+
+    transition: 0.3s;
+}
+
+table tr:nth-child(even) {
+    background-color: #fff3f8;
+}
+
+table tr:hover {
+    background-color: #ffd9e9;
+
+    transform: scale(1.01);
+}
+
+/* =========================
+   LIST
+========================= */
+
+ul,
+ol {
+    margin-left: 25px;
+}
+
+li {
+    margin: 12px 0;
+
+    transition: 0.3s;
+}
+
+li:hover {
+    color: #d63384;
+
+    transform: translateX(10px);
+
+    font-weight: bold;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    position: relative;
+
+    background: linear-gradient(
+        135deg,
+        #d63384,
+        #ed6aa4
+    );
+
+    color: white;
+
+    text-align: center;
+
+    padding: 25px;
+
+    margin-top: 40px;
+
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+}
+
+footer p {
+    animation: floating 2s infinite ease-in-out;
+}
+
+/* =========================
+   HIASAN LOVE
+========================= */
+
+footer::before {
+    content: "💕  🌸  ✨  🎀  ✨  🌸  💕";
+
+    display: block;
+
+    font-size: 18px;
+
+    margin-bottom: 8px;
+}
+
+/* =========================
+   RESPONSIVE HP
+========================= */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 40px 15px;
+    }
+
+    header h1 {
+        font-size: 25px;
+    }
+
+    nav a {
+        margin: 4px 5px;
+        padding: 7px 12px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .foto {
+        width: 150px;
+        height: 150px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    table th,
+    table td {
+        padding: 8px 4px;
+    }
+}
+
